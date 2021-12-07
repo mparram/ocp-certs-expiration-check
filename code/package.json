@@ -1,0 +1,16 @@
+{
+  "name": "nodejs-cert-rotation",
+  "version": "1.0.0",
+  "description": "Check Opensift certificates expiration and publish prometheus metrics with their expiration date",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "mparrade@redhat.com",
+  "license": "ISC",
+  "dependencies": {
+    "cert-info": "^1.5.1",
+    "express": "^4.17.1",
+    "prom-client": "^14.0.1"
+  }
+}

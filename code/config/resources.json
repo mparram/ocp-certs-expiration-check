@@ -1,0 +1,418 @@
+{
+    "AggregatorProxyClientCert": [
+      {
+        "type": "secret",
+        "name": "aggregator-client-signer",
+        "namespace": "openshift-kube-apiserver-operator",
+        "config":
+        {
+            "data": "tls.crt",
+            "validity": "1m"
+        }
+      },
+      {
+        "type": "configmap",
+        "name": "kube-apiserver-aggregator-client-ca",
+        "namespace": "openshift-config-managed",
+        "config":
+        {
+            "data": "ca-bundle.crt",
+            "validity": "1m"
+        }
+      },
+      {
+        "type": "secret",
+        "name": "aggregator-client",
+        "namespace": "openshift-kube-apiserver",
+        "config":
+        {
+            "data": "tls.crt",
+            "validity": "1m"
+        }
+      }
+    ],
+    "KubeAPIServerToKubeletClientCert": [
+      {
+        "type": "secret",
+        "name": "kube-apiserver-to-kubelet-signer",
+        "namespace": "openshift-kube-apiserver-operator",
+        "config":
+        {
+            "data": "tls.crt",
+            "validity": "1m"
+        }
+      },
+      {
+        "type": "configmap",
+        "name": "kube-apiserver-to-kubelet-client-ca",
+        "namespace": "openshift-kube-apiserver-operator",
+        "config":
+        {
+            "data": "ca-bundle.crt",
+            "validity": "1m"
+        }
+      },
+      {
+        "type": "secret",
+        "name": "kubelet-client-*",
+        "namespace": "openshift-kube-apiserver",
+        "config":
+        {
+            "data": "tls.crt",
+            "validity": "1m"
+        }
+      }
+    ],
+    "LocalhostServing": [
+      {
+        "type": "secret",
+        "name": "localhost-serving-signer",
+        "namespace": "openshift-kube-apiserver-operator",
+        "config":
+        {
+            "data": "tls.crt",
+            "validity": "1m"
+        }
+      },
+      {
+        "type": "configmap",
+        "name": "localhost-serving-ca",
+        "namespace": "openshift-kube-apiserver-operator",
+        "config":
+        {
+            "data": "ca-bundle.crt",
+            "validity": "1m"
+        }
+      },
+      {
+        "type": "secret",
+        "name": "localhost-serving-cert-certkey",
+        "namespace": "openshift-kube-apiserver",
+        "config":
+        {
+            "data": "tls.crt",
+            "validity": "1m"
+        }
+      }
+    ],
+    "ServiceNetworkServing": [
+      {
+        "type": "secret",
+        "name": "service-network-serving-signer",
+        "namespace": "openshift-kube-apiserver-operator",
+        "config":
+        {
+            "data": "tls.crt",
+            "validity": "1m"
+        }
+      },
+      {
+        "type": "configmap",
+        "name": "service-network-serving-ca",
+        "namespace": "openshift-kube-apiserver-operator",
+        "config":
+        {
+            "data": "ca-bundle.crt",
+            "validity": "1m"
+        }
+      },
+      {
+        "type": "secret",
+        "name": "service-network-serving-certkey",
+        "namespace": "openshift-kube-apiserver",
+        "config":
+        {
+            "data": "tls.crt",
+            "validity": "1m"
+        }
+      }
+    ],
+    "ExternalLoadBalancerServing": [
+      {
+        "type": "secret",
+        "name": "loadbalancer-serving-signer",
+        "namespace": "openshift-kube-apiserver-operator",
+        "config":
+        {
+            "data": "tls.crt",
+            "validity": "1m"
+        }
+      },
+      {
+        "type": "configmap",
+        "name": "loadbalancer-serving-ca",
+        "namespace": "openshift-kube-apiserver-operator",
+        "config":
+        {
+            "data": "ca-bundle.crt",
+            "validity": "1m"
+        }
+      },
+      {
+        "type": "secret",
+        "name": "external-loadbalancer-serving-certkey",
+        "namespace": "openshift-kube-apiserver",
+        "config":
+        {
+            "data": "tls.crt",
+            "validity": "1m"
+        }
+      }
+    ],
+    "InternalLoadBalancerServing": [
+      {
+        "type": "secret",
+        "name": "loadbalancer-serving-signer",
+        "namespace": "openshift-kube-apiserver-operator",
+        "config":
+        {
+            "data": "tls.crt",
+            "validity": "1m"
+        }
+      },
+      {
+        "type": "configmap",
+        "name": "loadbalancer-serving-ca",
+        "namespace": "openshift-kube-apiserver-operator",
+        "config":
+        {
+            "data": "ca-bundle.crt",
+            "validity": "1m"
+        }
+      },
+      {
+        "type": "secret",
+        "name": "internal-loadbalancer-serving-certkey",
+        "namespace": "openshift-kube-apiserver",
+        "config":
+        {
+            "data": "tls.crt",
+            "validity": "1m"
+        }
+      }
+    ],
+    "LocalhostRecoveryServing": [
+      {
+        "type": "secret",
+        "name": "localhost-recovery-serving-signer",
+        "namespace": "openshift-kube-apiserver-operator",
+        "config":
+        {
+            "data": "tls.crt",
+            "validity": "1m"
+        }
+      },
+      {
+        "type": "configmap",
+        "name": "localhost-recovery-serving-ca",
+        "namespace": "openshift-kube-apiserver-operator",
+        "config":
+        {
+            "data": "ca-bundle.crt",
+            "validity": "1m"
+        }
+      },
+      {
+        "type": "secret",
+        "name": "localhost-recovery-serving-certkey-*",
+        "namespace": "openshift-kube-apiserver",
+        "config":
+        {
+            "data": "tls.crt",
+            "validity": "1m"
+        }
+      }
+    ],
+    "KubeControllerManagerClient": [
+      {
+        "type": "secret",
+        "name": "kube-control-plane-signer",
+        "namespace": "openshift-kube-apiserver-operator",
+        "config":
+        {
+            "data": "tls.crt",
+            "validity": "1m"
+        }
+      },
+      {
+        "type": "configmap",
+        "name": "kube-control-plane-signer-ca",
+        "namespace": "openshift-kube-apiserver-operator",
+        "config":
+        {
+            "data": "ca-bundle.crt",
+            "validity": "1m"
+        }
+      },
+      {
+        "type": "secret",
+        "name": "kube-controller-manager-client-cert-key",
+        "namespace": "openshift-config-managed",
+        "config":
+        {
+            "data": "tls.crt",
+            "validity": "1m"
+        }
+      },
+      {
+        "type": "secret",
+        "name": "kube-controller-manager-client-cert-key-*",
+        "namespace": "openshift-kube-controller-manager",
+        "config":
+        {
+            "data": "tls.crt",
+            "validity": "1m"
+        }
+      }
+    ],
+    "KubeSchedulerClient": [
+      {
+        "type": "secret",
+        "name": "kube-control-plane-signer",
+        "namespace": "openshift-kube-apiserver-operator",
+        "config":
+        {
+            "data": "tls.crt",
+            "validity": "1m"
+        }
+      },
+      {
+        "type": "configmap",
+        "name": "kube-control-plane-signer-ca",
+        "namespace": "openshift-kube-apiserver-operator",
+        "config":
+        {
+            "data": "ca-bundle.crt",
+            "validity": "1m"
+        }
+      },
+      {
+        "type": "secret",
+        "name": "kube-scheduler-client-cert-key",
+        "namespace": "openshift-config-managed",
+        "config":
+        {
+            "data": "tls.crt",
+            "validity": "1m"
+        }
+      },
+      {
+        "type": "secret",
+        "name": "kube-scheduler-client-cert-key",
+        "namespace": "openshift-kube-scheduler",
+        "config":
+        {
+            "data": "tls.crt",
+            "validity": "1m"
+        }
+      }
+    ],
+    "ControlPlaneNodeAdminClient": [
+      {
+        "type": "secret",
+        "name": "kube-control-plane-signer",
+        "namespace": "openshift-kube-apiserver-operator",
+        "config":
+        {
+            "data": "tls.crt",
+            "validity": "1m"
+        }
+      },
+      {
+        "type": "configmap",
+        "name": "kube-control-plane-signer-ca",
+        "namespace": "openshift-kube-apiserver-operator",
+        "config":
+        {
+            "data": "ca-bundle.crt",
+            "validity": "1m"
+        }
+      },
+      {
+        "type": "secret",
+        "name": "control-plane-node-admin-client-cert-key",
+        "namespace": "openshift-kube-apiserver",
+        "config":
+        {
+            "data": "tls.crt",
+            "validity": "1m"
+        }
+      }
+    ],
+    "CheckEndpointsClient": [
+      {
+        "type": "secret",
+        "name": "kube-control-plane-signer",
+        "namespace": "openshift-kube-apiserver-operator",
+        "config":
+        {
+            "data": "tls.crt",
+            "validity": "1m"
+        }
+      },
+      {
+        "type": "configmap",
+        "name": "kube-control-plane-signer-ca",
+        "namespace": "openshift-kube-apiserver-operator",
+        "config":
+        {
+            "data": "ca-bundle.crt",
+            "validity": "1m"
+        }
+      },
+      {
+        "type": "secret",
+        "name": "check-endpoints-client-cert-key",
+        "namespace": "openshift-kube-apiserver",
+        "config":
+        {
+            "data": "tls.crt",
+            "validity": "1m"
+        }
+      }
+    ],
+    "NodeSystemAdminClient": [
+      {
+        "type": "secret",
+        "name": "node-system-admin-signer",
+        "namespace": "openshift-kube-apiserver-operator",
+        "config":
+        {
+            "data": "tls.crt",
+            "validity": "1m"
+        }
+      },
+      {
+        "type": "configmap",
+        "name": "node-system-admin-ca",
+        "namespace": "openshift-kube-apiserver-operator",
+        "config":
+        {
+            "data": "ca-bundle.crt",
+            "validity": "1m"
+        }
+      },
+      {
+        "type": "secret",
+        "name": "node-system-admin-client",
+        "namespace": "openshift-kube-apiserver-operator",
+        "config":
+        {
+            "data": "tls.crt",
+            "validity": "1m"
+        }
+      }
+    ],
+    "Custom": [
+      {
+        "type": "configmap",
+        "name": "client-ca",
+        "namespace": "openshift-kube-apiserver",
+        "config":
+        {
+            "data": "ca-bundle.crt",
+            "validity": "1m"
+        }
+      }
+    ]
+}

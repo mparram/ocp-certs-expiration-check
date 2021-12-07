@@ -1,0 +1,29 @@
+kind: BuildConfig
+apiVersion: build.openshift.io/v1
+metadata:
+  name: ocp-certs-expiration-check
+  namespace: cert-check
+spec:
+  nodeSelector: null
+  output:
+    to:
+      kind: ImageStreamTag
+      name: 'certs-expiration-check:latest'
+  strategy:
+    type: Source
+    sourceStrategy:
+      from:
+        kind: ImageStreamTag
+        namespace: openshift
+        name: 'nodejs:12-ubi8'
+  triggers:
+    - type: ImageChange
+      imageChange: {}
+    - type: ConfigChange
+  source:
+    type: Git
+    git:
+      uri: 'https://github.com/mparram/ocp-certs-expiration-check.git'
+      ref: master
+    contextDir: /code/
+  runPolicy: Serial
