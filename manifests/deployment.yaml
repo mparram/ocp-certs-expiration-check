@@ -8,6 +8,8 @@ metadata:
 spec:
   replicas: 1
   selector:
+    matchLabels:
+      app: certs-expiration-check
   template:
     metadata:
       creationTimestamp: null

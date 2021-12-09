@@ -24,6 +24,6 @@ spec:
     type: Git
     git:
       uri: 'https://github.com/mparram/ocp-certs-expiration-check.git'
-      ref: master
+      ref: main
     contextDir: /code/
   runPolicy: Serial
